@@ -33,18 +33,43 @@ public class IntLinkedList {
 	public int pop() {
 		if (isEmpty())
 			return INT;
-		int ret = last.value;
-		last = last.prev;
+		int ret = last.getValue();
+		last = last.getPrev();
 		return ret;
 	}
 
 	private class Node {
 
-		public int value;
-		public Node prev, next;
+		private int value;
+		private Node prev;
+		private Node next;
 
 		public Node(int i) {
-			value = i;
+			setValue(i);
+		}
+
+		public int getValue() {
+			return value;
+		}
+
+		public void setValue(int value) {
+			this.value = value;
+		}
+
+		public Node getPrev() {
+			return prev;
+		}
+
+		public void setPrev(Node prev) {
+			this.prev = prev;
+		}
+
+		public Node getNext() {
+			return next;
+		}
+
+		public void setNext(Node next) {
+			this.next = next;
 		}
 	}
 }
