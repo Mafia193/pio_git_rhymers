@@ -3,8 +3,15 @@ package edu.kis.vh.nursery;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * The type Rhymers j unit test.
+ */
 public class RhymersJUnitTest {
 
+	/**
+	 * Test count in.
+	 * Testowanie dodawania elementów do wyliczanki.
+	 */
 	@Test
 	public void testCountIn() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
@@ -22,6 +29,10 @@ public class RhymersJUnitTest {
 		Assert.assertEquals(DefaultCountingOutRhymer.LAST_INDEX, result);
 	}
 
+	/**
+	 * Test call check.
+	 * Testowanie poprawnego sprawdzania braku elementów w wyliczance.
+	 */
 	@Test
 	public void testCallCheck() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
@@ -35,6 +46,10 @@ public class RhymersJUnitTest {
 		Assert.assertFalse(result);
 	}
 
+	/**
+	 * Test is full.
+	 * Testowanie poprawnego sprawdzenia zapełnienia wyliczanki.
+	 */
 	@Test
 	public void testIsFull() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
@@ -50,6 +65,10 @@ public class RhymersJUnitTest {
 		Assert.assertTrue(result);
 	}
 
+	/**
+	 * Test peekaboo.
+	 * Testowanie pobierania wartośći ostatniego olementu w wyliczance.
+	 */
 	@Test
 	public void testPeekaboo() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
@@ -67,6 +86,10 @@ public class RhymersJUnitTest {
 		Assert.assertEquals(testValue, result);
 	}
 
+	/**
+	 * Test count out.
+	 * Testowanie pobierania ostatniego olementu w wyliczance.
+	 */
 	@Test
 	public void testCountOut() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();

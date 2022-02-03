@@ -3,8 +3,16 @@ package edu.kis.vh.nursery;
 import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
 import edu.kis.vh.nursery.factory.RhymersFactory;
 
+/**
+ * The type Rhymers demo.
+ */
 class RhymersDemo {
 
+	/**
+	 * The entry point of application.
+	 *
+	 * @param args the input arguments
+	 */
 	public static void main(String[] args) {
 		RhymersFactory factory = new DefaultRhymersFactory();
 

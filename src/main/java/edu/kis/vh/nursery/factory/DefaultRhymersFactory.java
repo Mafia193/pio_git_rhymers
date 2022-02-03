@@ -4,6 +4,9 @@ import edu.kis.vh.nursery.DefaultCountingOutRhymer;
 import edu.kis.vh.nursery.FifoRhymer;
 import edu.kis.vh.nursery.HanoiRhymer;
 
+/**
+ * The type Default rhymers factory.
+ */
 public class DefaultRhymersFactory implements RhymersFactory {
 
 	@Override
