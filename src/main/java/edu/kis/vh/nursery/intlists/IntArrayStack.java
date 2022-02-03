@@ -25,7 +25,7 @@ public class IntArrayStack implements IntBridge {
 	@Override
 	public void push(int in) {
 		if (!isFull())
-			numbers[++total] = in;
+			numbers[total++] = in;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class IntArrayStack implements IntBridge {
 	 */
 	@Override
 	public boolean isFull() {
-		return total == LAST_INDEX;
+		return total == CAPACITY;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class IntArrayStack implements IntBridge {
 	public int top() {
 		if (isEmpty())
 			return EMPTY;
-		return numbers[total];
+		return numbers[total - 1];
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class IntArrayStack implements IntBridge {
 	public int pop() {
 		if (isEmpty())
 			return EMPTY;
-		return numbers[total--];
+		return numbers[--total];
 	}
 
 	/**
