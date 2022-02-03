@@ -1,4 +1,4 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.intlists;
 
 import edu.kis.vh.nursery.IntBridge;
 
