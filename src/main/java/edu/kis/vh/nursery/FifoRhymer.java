@@ -1,11 +1,13 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.intlists.IntArrayStack;
+
 /**
  * The type Fifo rhymer.
  */
 public class FifoRhymer extends DefaultCountingOutRhymer {
 
-	private final DefaultCountingOutRhymer defaultCountingOutRhymer = new DefaultCountingOutRhymer();
+	private final IntArrayStack stack = new IntArrayStack();
 
 	public FifoRhymer() {
 	}
@@ -13,12 +15,12 @@ public class FifoRhymer extends DefaultCountingOutRhymer {
 	@Override
 	public int pop() {
 		while (!isEmpty())
-			defaultCountingOutRhymer.push(super.pop());
+			stack.push(super.pop());
 
-		int ret = defaultCountingOutRhymer.pop();
+		int ret = stack.pop();
 
-		while (!defaultCountingOutRhymer.isEmpty())
-			push(defaultCountingOutRhymer.pop());
+		while (!stack.isEmpty())
+			push(stack.pop());
 
 		return ret;
 	}
