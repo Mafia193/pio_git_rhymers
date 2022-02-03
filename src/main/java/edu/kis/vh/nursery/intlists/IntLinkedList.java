@@ -1,11 +1,13 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.intlists;
+
+import edu.kis.vh.nursery.IntBridge;
 
 /**
  * The type Int linked list.
  */
-public class IntLinkedList {
+public class IntLinkedList implements IntBridge {
 
-  private static final int INT = -1;
+    private static final int EMPTY = -1;
 	private Node last;
 	private int i;  // TODO: Usunąć zbędną zmienną
 
@@ -29,6 +31,7 @@ public class IntLinkedList {
 	 *  Sprawdza czy lista jest pusta.
 	 * @return the boolean
 	 */
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
@@ -38,6 +41,7 @@ public class IntLinkedList {
 	 *  Sprawdza czy lista jest pełna.
 	 * @return the boolean
 	 */
+	@Override
 	public boolean isFull() {
 		return false;
 	}
@@ -47,9 +51,10 @@ public class IntLinkedList {
 	 *  Pobiera wartość ostatniego elementu z listy.
 	 * @return the int
 	 */
+	@Override
 	public int top() {
 		if (isEmpty())
-			return INT;
+			return EMPTY;
 		return last.getValue();
 	}
 
@@ -58,9 +63,10 @@ public class IntLinkedList {
 	 *  ściąga ostatni element z listy i zwraca jego wartość.
 	 * @return the int
 	 */
+	@Override
 	public int pop() {
 		if (isEmpty())
-			return INT;
+			return EMPTY;
 		int ret = last.getValue();
 		last = last.getPrev();
 		return ret;
