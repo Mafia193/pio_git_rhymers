@@ -1,91 +1,46 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.intlists.IntArrayStack;
+
 /**
  * The type Default counting out rhymer.
  */
-public class DefaultCountingOutRhymer {
+public class DefaultCountingOutRhymer implements IntBridge{
 
-	/**
-	 * The constant EMPTY.
-	 */
-	public static final int EMPTY = -1;
-	/**
-	 * The constant LAST_INDEX.
-	 */
-	public static final int LAST_INDEX = 11;
-	/**
-	 * The constant CAPACITY.
-	 */
-	public static final int CAPACITY = 12;
-	private final int[] numbers = new int[CAPACITY];
+	IntArrayStack stack = new IntArrayStack();
 
-	private int total = EMPTY;
+	public DefaultCountingOutRhymer() { }
 
-	/**
-	 * Count in.
-	 *  Dodaje element do wyliczanki jeżeli nie jest pełna.
-	 * @param in the in
-	 */
-	public void countIn(int in) {
-		if (!isFull())
-			numbers[++total] = in;
+	@Override
+	public void push(int in) {
+		stack.push(in);
 	}
 
-	/**
-	 * Call check boolean.
-	 *  Sprawdza czy wyliczanka nie jest pusta.
-	 * @return the boolean
-	 */
-	public boolean callCheck() {
-		return total == EMPTY;
-	}   // TODO: Zmienić nazwę funkcji
+	@Override
+	public boolean isEmpty() {
+		return stack.isEmpty();
+	}
 
-	/**
-	 * Is full boolean.
-	 *
-	 * @return the boolean
-	 */
+	@Override
 	public boolean isFull() {
-		return total == LAST_INDEX;
+		return stack.isFull();
 	}
 
-	/**
-	 * Peekaboo int.
-	 *  Zwraca wartość ostatniego elementu z tablicy.
-	 * @return the int
-	 */
-	protected int peekaboo() {
-		if (callCheck())
-			return EMPTY;
-		return numbers[total];
+	@Override
+	public int top() {
+		return stack.top();
 	}
 
-	/**
-	 * Count out int.
-	 *  Usuwa ostatni element z tablicy i zwraca jego wartość
-	 * @return the int
-	 */
-	public int countOut() {
-		if (callCheck())
-			return EMPTY;
-		return numbers[total--];
+	@Override
+	public int pop() {
+		return stack.pop();
 	}
 
-	/**
-	 * Get numbers int [ ].
-	 *
-	 * @return the int [ ]
-	 */
 	public int[] getNumbers() {
-		return numbers;
+		return stack.getNumbers();
 	}
 
-	/**
-	 * Gets total.
-	 *
-	 * @return the total
-	 */
 	public int getTotal() {
-		return total;
+		return stack.getTotal();
 	}
 }
