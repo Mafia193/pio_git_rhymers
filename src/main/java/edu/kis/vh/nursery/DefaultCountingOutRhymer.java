@@ -3,30 +3,35 @@ package edu.kis.vh.nursery;
 /**
  * The type Default counting out rhymer.
  */
-public class DefaultCountingOutRhymer {
+public class DefaultCountingOutRhymer implements IntBridge{
 
 	IntArrayStack stack = new IntArrayStack();
 
 	public DefaultCountingOutRhymer() { }
 
-	public void countIn(int in) {
-		stack.countIn(in);
+	@Override
+	public void push(int in) {
+		stack.push(in);
 	}
 
-	public boolean callCheck() {
-		return stack.callCheck();
+	@Override
+	public boolean isEmpty() {
+		return stack.isEmpty();
 	}
 
+	@Override
 	public boolean isFull() {
 		return stack.isFull();
 	}
 
-	public int peekaboo() {
-		return stack.peekaboo();
+	@Override
+	public int top() {
+		return stack.top();
 	}
 
-	public int countOut() {
-		return stack.countOut();
+	@Override
+	public int pop() {
+		return stack.pop();
 	}
 
 	public int[] getNumbers() {

@@ -1,11 +1,7 @@
 package edu.kis.vh.nursery;
 
-public class IntArrayStack {
+public class IntArrayStack implements IntBridge {
 
-	/**
-	 * The constant EMPTY.
-	 */
-	public static final int EMPTY = -1;
 	/**
 	 * The constant LAST_INDEX.
 	 */
@@ -24,7 +20,8 @@ public class IntArrayStack {
 	 *  Dodaje element do wyliczanki jeżeli nie jest pełna.
 	 * @param in the in
 	 */
-	public void countIn(int in) {
+	@Override
+	public void push(int in) {
 		if (!isFull())
 			numbers[++total] = in;
 	}
@@ -34,15 +31,17 @@ public class IntArrayStack {
 	 *  Sprawdza czy wyliczanka nie jest pusta.
 	 * @return the boolean
 	 */
-	public boolean callCheck() {
+	@Override
+	public boolean isEmpty() {
 		return total == EMPTY;
-	}   // TODO: Zmienić nazwę funkcji
+	}
 
 	/**
 	 * Is full boolean.
 	 *
 	 * @return the boolean
 	 */
+	@Override
 	public boolean isFull() {
 		return total == LAST_INDEX;
 	}
@@ -52,8 +51,9 @@ public class IntArrayStack {
 	 *  Zwraca wartość ostatniego elementu z tablicy.
 	 * @return the int
 	 */
-	protected int peekaboo() {
-		if (callCheck())
+	@Override
+	public int top() {
+		if (isEmpty())
 			return EMPTY;
 		return numbers[total];
 	}
@@ -63,8 +63,9 @@ public class IntArrayStack {
 	 *  Usuwa ostatni element z tablicy i zwraca jego wartość
 	 * @return the int
 	 */
-	public int countOut() {
-		if (callCheck())
+	@Override
+	public int pop() {
+		if (isEmpty())
 			return EMPTY;
 		return numbers[total--];
 	}
