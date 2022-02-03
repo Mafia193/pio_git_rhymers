@@ -7,6 +7,9 @@ public class FifoRhymer extends DefaultCountingOutRhymer {
 
 	private final DefaultCountingOutRhymer defaultCountingOutRhymer = new DefaultCountingOutRhymer();
 
+	public FifoRhymer() {
+	}
+
 	@Override
 	public int pop() {
 		while (!isEmpty())

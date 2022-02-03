@@ -17,6 +17,7 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
 		return totalRejected;
 	}
 
+	public HanoiRhymer() {}
 
 	@Override
 	public void push(int in) {
