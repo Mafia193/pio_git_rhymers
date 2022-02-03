@@ -7,7 +7,7 @@ public class IntLinkedList {
 
   private static final int INT = -1;
 	private Node last;
-	private int i;
+	private int i;  // TODO: Usunąć zbędną zmienną
 
 	/**
 	 * Push.

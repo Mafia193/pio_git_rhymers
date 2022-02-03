@@ -38,7 +38,7 @@ public class DefaultCountingOutRhymer {
 	 */
 	public boolean callCheck() {
 		return total == EMPTY;
-	}
+	}   // TODO: Zmienić nazwę funkcji
 
 	/**
 	 * Is full boolean.
