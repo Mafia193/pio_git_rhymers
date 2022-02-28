@@ -1,6 +1,8 @@
 package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
+import edu.kis.vh.nursery.factory.IntArrayStackRhymersFactory;
+import edu.kis.vh.nursery.factory.IntLinkedListRhymersFactory;
 import edu.kis.vh.nursery.factory.RhymersFactory;
 
 /**
@@ -14,10 +16,16 @@ class RhymersDemo {
 	 * @param args the input arguments
 	 */
 	public static void main(String[] args) {
-		RhymersFactory factory = new DefaultRhymersFactory();
+		RhymersFactory defaultRhymersFactory = new DefaultRhymersFactory();
+		RhymersFactory intArrayStackRhymersFactory = new IntArrayStackRhymersFactory();
+		RhymersFactory intLinkedListRhymersFactory = new IntLinkedListRhymersFactory();
 
-		testRhymers(factory);
-
+		System.out.println("DefaultRhymersFactory");
+		testRhymers(defaultRhymersFactory);
+		System.out.println("\nIntArrayStackRhymersFactory");
+		testRhymers(intArrayStackRhymersFactory);
+		System.out.println("\nIntLinkedListRhymersFactory");
+		testRhymers(intLinkedListRhymersFactory);
 	}
 
 	private static void  testRhymers(RhymersFactory factory) {
@@ -33,7 +41,7 @@ class RhymersDemo {
 			rhymers[3].countIn(rn.nextInt(20));
 
 		for (int i = 0; i < rhymers.length; i++) {
-			while (!rhymers[i].callCheck())
+			while (!rhymers[i].isEmpty())
 				System.out.print(rhymers[i].countOut() + "  ");
 			System.out.println();
 		}

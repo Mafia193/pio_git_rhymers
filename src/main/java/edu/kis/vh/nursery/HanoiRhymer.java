@@ -17,9 +17,17 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
 		return totalRejected;
 	}
 
+	public HanoiRhymer() {
+		super();
+	}
+
+	public HanoiRhymer(IntStack stack){
+		super(stack);
+	}
+
 	@Override
 	public void countIn(int in) {
-		if (!callCheck() && in > peekaboo())
+		if (!isEmpty() && in > peekaboo())
 			totalRejected++;
 		else
 			super.countIn(in);
