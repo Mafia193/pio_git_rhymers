@@ -1,13 +1,13 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.intlists.IntArrayStack;
+import edu.kis.vh.nursery.intlists.IntLinkedList;
 
 /**
  * The type Fifo rhymer.
  */
 public class FifoRhymer extends DefaultCountingOutRhymer {
 
-	private IntStack fifoStack = new IntArrayStack();
+	private IntStack fifoStack = new IntLinkedList();
 
 	public FifoRhymer(){
 		super();
