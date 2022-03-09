@@ -7,7 +7,7 @@ import edu.kis.vh.nursery.intlists.IntArrayStack;
  */
 public class DefaultCountingOutRhymer {
 
-	protected IntStack stack;
+	private IntStack stack;
 
 	public DefaultCountingOutRhymer() {
 		stack = new IntArrayStack();
